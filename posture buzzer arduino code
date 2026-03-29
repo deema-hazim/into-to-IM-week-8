@@ -1,0 +1,16 @@
+int foilPin = 2;
+int buzzer = 8;
+
+void setup() {
+  pinMode(foilPin, INPUT_PULLUP);
+}
+
+void loop() {
+  int state = digitalRead(foilPin);
+
+  if (state == HIGH) //foils touching (sitting straight)
+    tone(buzzer, 1000);
+
+  else //foils not touching (slouching)
+    noTone(buzzer);
+}

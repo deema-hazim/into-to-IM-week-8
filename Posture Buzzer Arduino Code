@@ -8,9 +8,9 @@ void setup() {
 void loop() {
   int state = digitalRead(foilPin);
 
-  if (state == HIGH) //foils touching (sitting straight)
+  if (state == HIGH) //foils not touching (slouching)
     tone(buzzer, 1000);
 
-  else //foils not touching (slouching)
+  else //foils touching (sitting straight)
     noTone(buzzer);
 }
